@@ -2,20 +2,12 @@ describe('Todo', function () {
 
     describe('Todo module and ctrl', function (){
 
-        var $ctrl, todoServiceMock, deferred;
+        var $ctrl;
 
         beforeEach(module('todoApp'));
 
-        beforeEach(inject(function ($componentController, $q){
-            deferred = $q.defer();
-            todoServiceMock = {
-                get: function () {
-                    return deferred.promise
-                }
-            }
-            $ctrl = $componentController('todoComponent', {
-                todoService: todoServiceMock
-            });
+        beforeEach(inject(function ($componentController){
+            $ctrl = $componentController('todoComponent', {});
             $ctrl.$onInit();
         }));
 
@@ -54,13 +46,5 @@ describe('Todo', function () {
         // it('should return false', function () {
         //     expect($ctrl.or(false, false)).toEqual(false);
         // });
-
-        it('should have a service', function () {
-            expect(todoServiceMock).toBeDefined();
-        });
-
-        it('should have a service.get method', function (){
-            expect(todoServiceMock.get).toBeDefined();
-        });
     });
 });

@@ -1,8 +1,7 @@
 (function (angular){
     'use strict';
 
-    todoCtrl.$injector = ['todoService']
-    function todoCtrl (todoService){
+    function todoCtrl (){
 
         var $ctrl = this;
 
