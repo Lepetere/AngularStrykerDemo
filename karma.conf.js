@@ -2,7 +2,7 @@ module.exports = function(config) {
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
-    files: [
+    files: [ // all files that are to be mutated and all tests must be included
         'node_modules/angular/angular.js',
         'node_modules/angular-mocks/angular-mocks.js',
         'app.js',
